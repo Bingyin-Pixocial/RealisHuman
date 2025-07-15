@@ -43,15 +43,15 @@ def main():
     model.eval()
 
     # Load detector
-    from hamer.utils.utils_detectron2 import DefaultPredictor_Lazy
-    from detectron2.config import LazyConfig
-    import hamer
-    cfg_path = Path(hamer.__file__).parent/'configs'/'cascade_mask_rcnn_vitdet_h_75ep.py'
-    detectron2_cfg = LazyConfig.load(str(cfg_path))
-    detectron2_cfg.train.init_checkpoint = "/mnt/workspace/workgroup/wangbenzhi.wbz/RealisHuman/submodules/hamer-main/model_final_f05665.pkl"
-    for i in range(3):
-        detectron2_cfg.model.roi_heads.box_predictors[i].test_score_thresh = 0.25
-    detector = DefaultPredictor_Lazy(detectron2_cfg)
+    # from hamer.utils.utils_detectron2 import DefaultPredictor_Lazy
+    # from detectron2.config import LazyConfig
+    # import hamer
+    # cfg_path = Path(hamer.__file__).parent/'configs'/'cascade_mask_rcnn_vitdet_h_75ep.py'
+    # detectron2_cfg = LazyConfig.load(str(cfg_path))
+    # detectron2_cfg.train.init_checkpoint = "/mnt/workspace/workgroup/wangbenzhi.wbz/RealisHuman/submodules/hamer-main/model_final_f05665.pkl"
+    # for i in range(3):
+    #     detectron2_cfg.model.roi_heads.box_predictors[i].test_score_thresh = 0.25
+    # detector = DefaultPredictor_Lazy(detectron2_cfg)
 
     # keypoint detector
     # cpm = ViTPoseModel(device)

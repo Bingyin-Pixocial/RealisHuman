@@ -169,22 +169,29 @@ def save_cropped_images(image_frame, hamer_frame, crop_params, output_dir, image
     imageio.imwrite(pose_path, hamer_crop_frame)
     
 if __name__ == '__main__':
-    # locate and crop
-    output_dir = 'data/hand_example/hand_chip'
-    gt_dir = 'data/images'
-    input_dir = 'data/images'
+    # 1) Define root_dir up‐front
+    root_dir   = os.path.dirname(os.path.abspath(__file__))  # …/RealisHuman/data
+
+    # 2) Point to your raw images
+    input_dir  = os.path.join(root_dir, 'images')
+
+    # 3) Prepare your output directories
+    output_dir = os.path.join(root_dir, 'hand_example', 'hand_chip')
     os.makedirs(os.path.join(output_dir, 'images'), exist_ok=True)
     os.makedirs(os.path.join(output_dir, 'hamers'), exist_ok=True)
+
+    # 4) Stage 1 processing
     process_image_pair(output_dir, input_dir)
-    # process foreground
-    hamer_path = 'data/hand_example/hand_chip/hamers'
-    image_path = 'data/hand_example/hand_chip/images'
-    save_path = 'data/hand_example/hand_chip/foreground'
+
+    # 5) Foreground processing
+    hamer_path = os.path.join(output_dir, 'hamers')
+    image_path = os.path.join(output_dir, 'images')
+    save_path  = os.path.join(output_dir, 'foreground')
     os.makedirs(save_path, exist_ok=True)
     process_foreground(image_path, hamer_path, save_path)
-    # get json for sampling
-    root_dir = '/mnt/workspace/workgroup/wangbenzhi.wbz/RealisHuman/'
-    dirname = 'data/hand_example/hand_chip'
-    output = build_taobao_dance_wo_group_stage1_val(root_dir, dirname)
-    with open('data/hand_example/hand_stage1_val.json', 'w') as f:  
+
+    # 6) Build your JSON and write it under data/hand_example
+    output = build_taobao_dance_wo_group_stage1_val(root_dir, 'hand_example/hand_chip')
+    json_path = os.path.join(root_dir, 'hand_example', 'hand_stage1_val.json')
+    with open(json_path, 'w') as f:
         json.dump(output, f)

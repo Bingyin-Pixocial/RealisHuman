@@ -2,7 +2,8 @@ from typing import Any, Dict, Optional, Tuple, Union
 
 import torch
 import torch.utils.checkpoint
-from diffusers.models.unet_2d_condition import UNet2DConditionModel, UNet2DConditionOutput, logger
+# from diffusers.models.unet_2d_condition import UNet2DConditionModel, UNet2DConditionOutput, logger
+from diffusers.models.unets.unet_2d_condition import UNet2DConditionModel, UNet2DConditionOutput, logger
 
 
 class HackUNet2DConditionModel(UNet2DConditionModel):

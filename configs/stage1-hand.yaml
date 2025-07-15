@@ -1,9 +1,9 @@
 image_finetune: True
 
 output_dir: "outputs"
-pretrained_model_path: "pretrained_models/RV/rv-5-1"
-pretrained_clip_path: "pretrained_models/DINO/dinov2"
-pretrained_vae_path: "pretrained_models/StableDiffusion/sd-1-5"
+pretrained_model_path: "/home/ubuntu/bingyin-Vol/code/i2v/tools/RealisHuman/pretrained_models/RV/rv-5-1"
+pretrained_clip_path: "/home/ubuntu/bingyin-Vol/code/i2v/tools/RealisHuman/pretrained_models/DINO/dinov2"
+pretrained_vae_path: "/home/ubuntu/bingyin-Vol/code/i2v/tools/RealisHuman/pretrained_models/StableDiffusion/sd-vae-ft-mse"
 
 pose_guider_kwargs:
   conditioning_embedding_channels      : 320
@@ -35,8 +35,8 @@ validation_data:
   dataset_class: PartChipDataset
   args:
     split: "val"
-    root: "/mnt/workspace/workgroup/wangbenzhi.wbz/RealisHuman/"
-    data_info_json:  "data/hand_example/hand_stage1_val.json"
+    root: "/home/ubuntu/bingyin-Vol/code/i2v/tools/RealisHuman/data/"
+    data_info_json:  "/home/ubuntu/bingyin-Vol/code/i2v/tools/RealisHuman/data/hand_example/hand_stage1_val.json"
     sample_size: [512, 512] 
     clip_size: [224, 224] 
     group: True

@@ -27,7 +27,8 @@ def build_taobao_dance_wo_group(root_dir, dirname):
 
 if __name__ == '__main__':
     
-    root_dir = '/mnt/workspace/workgroup/wangbenzhi.wbz/RealisHuman/'
+    # Use the current directory as root_dir
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     dirname = 'data/hand_example/hand_chip'
     output = build_taobao_dance_wo_group(root_dir, dirname)
     with open('data/hand_example/hand_stage2_val.json', 'w') as f:  

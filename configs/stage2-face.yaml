@@ -3,6 +3,7 @@ image_finetune: True
 output_dir: "outputs"
 pretrained_model_path: "pretrained_models/StableDiffusion/stable-diffusion-inpainting"
 
+
 zero_snr:                True
 train_cfg:               True
 snr_gamma:               5.0
