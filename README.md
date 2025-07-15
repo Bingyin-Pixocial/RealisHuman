@@ -70,14 +70,14 @@ Use the following command to extract DWPose data:
 
 ```shell
 cd submodules/DWPose
-conda activate {YOUR_DWPose_Environment}
+conda activate control-v11
 python ControlNet-v1-1-nightly/dwpose_infer_example.py --input_path ../../data/images/image --output_path ../../data/images/dwpose
 ```
 
 To refine generated images with malformed hands, estimate the hand meshes using HaMeR:
 ```shell
 cd submodules/hamer-main
-conda activate {YOUR_HaMeR_Environment}
+conda activate hamer
 python demo_image.py --img_folder ../../data/images/image --out_folder ../../data/images/hamer --full_frame
 ```
 In case you encounter the error "AttributeError: 'NoneType' object has no attribute 'glGetError'", try the following:
@@ -88,7 +88,7 @@ apt-get install -y python-opengl libosmesa6
 If you want to refine generated images with malformed faces, estimate the face meshes using 3DDFAv3:
 ```shell
 cd submodules/3DDFA-V3
-conda activate {YOUR_3DDFAv3_Environment}
+conda activate TDDFAV3
 python demo_dir.py --inputpath ../../data/images/image --savepath ../../data/images/3ddfa --device cuda --iscrop 1 --detector retinaface --ldm68 0 --ldm106 0 --ldm106_2d 0 --ldm134 0 --seg_visible 0 --seg 0 --useTex 0 --extractTex 0 --backbone resnet50
 ```
 
