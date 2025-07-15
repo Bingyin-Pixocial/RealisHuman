@@ -74,7 +74,8 @@ mkdir checkpoint && mkdir pretrained_models
 |   |   `-- rv-5-1
 |   `-- StableDiffusion
 |       |-- sd-1-5
-|       `-- stable-diffusion-inpainting
+|       |-- sd-vae-ft-mse
+|       |-- stable-diffusion-inpainting
 
 
 ```
