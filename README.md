@@ -64,7 +64,6 @@ data
 |   |-- dwpose
 |   |-- hamer
 |   |-- image
-|   `-- results
 ```
 
 Use the following command to extract DWPose data:
@@ -139,7 +138,7 @@ To paste the refined hand image back, execute:
 ```bash
 python data/back_to_image_hand.py
 ```
-Then, your can find the refined results in data/hand_example/hand_chip/results.
+Then, your can find the refined results in data/images/results_hand.
 
 ---
 
