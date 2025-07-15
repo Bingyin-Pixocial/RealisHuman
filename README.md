@@ -71,14 +71,14 @@ Use the following command to extract DWPose data:
 ```shell
 cd submodules/DWPose
 conda activate {YOUR_DWPose_Environment}
-python ControlNet-v1-1-nightly/dwpose_infer_example.py --input_path {PATH_TO_IMAGE_DIR}/image --output_path {PATH_TO_SAVE_PKL}/dwpose
+python ControlNet-v1-1-nightly/dwpose_infer_example.py --input_path ../../data/images/image --output_path ../../data/images/dwpose
 ```
 
 To refine generated images with malformed hands, estimate the hand meshes using HaMeR:
 ```shell
 cd submodules/hamer-main
 conda activate {YOUR_HaMeR_Environment}
-python demo_image.py --img_folder {PATH_TO_IMAGE_DIR}/image --out_folder {PATH_TO_SAVE_HAMER}/hamer --full_frame
+python demo_image.py --img_folder ../../data/images/image --out_folder ../../data/images/hamer --full_frame
 ```
 In case you encounter the error "AttributeError: 'NoneType' object has no attribute 'glGetError'", try the following:
 ```shell
@@ -89,7 +89,7 @@ If you want to refine generated images with malformed faces, estimate the face m
 ```shell
 cd submodules/3DDFA-V3
 conda activate {YOUR_3DDFAv3_Environment}
-python demo_dir.py --inputpath {PATH_TO_IMAGE_DIR}/image --savepath {PATH_TO_SAVE_3DDFA}/3ddfa --device cuda --iscrop 1 --detector retinaface --ldm68 0 --ldm106 0 --ldm106_2d 0 --ldm134 0 --seg_visible 0 --seg 0 --useTex 0 --extractTex 0 --backbone resnet50
+python demo_dir.py --inputpath ../../data/images/image --savepath ../../data/images/3ddfa --device cuda --iscrop 1 --detector retinaface --ldm68 0 --ldm106 0 --ldm106_2d 0 --ldm134 0 --seg_visible 0 --seg 0 --useTex 0 --extractTex 0 --backbone resnet50
 ```
 
 
