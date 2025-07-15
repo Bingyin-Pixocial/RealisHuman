@@ -47,7 +47,7 @@ You can install the required environment using conda:
 conda env create -f environment.yaml
 conda activate RealisHuman
 ```
-or with `pip`:
+and then
 ```bash
 pip3 install -r requirements.txt
 ```
