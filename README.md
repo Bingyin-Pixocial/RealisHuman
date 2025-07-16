@@ -96,7 +96,7 @@ python demo_dir.py --inputpath ../../data/images/image --savepath ../../data/ima
 ## Inference of RealisHuman
 
 ### 1. Hand Refining
-
+Hand refinement can be run in hamer enviroment.
 #### Stage-One Pre-processing
 
 To pre-process the hand data for stage-one, run the following command:
