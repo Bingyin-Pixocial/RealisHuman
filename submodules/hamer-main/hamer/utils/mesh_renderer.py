@@ -4,7 +4,7 @@ import os
 import torch
 from torchvision.utils import make_grid
 import numpy as np
-os.environ['PYOPENGL_PLATFORM'] = 'egl'
+os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
 import pyrender
 import trimesh
 import cv2
